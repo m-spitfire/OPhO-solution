@@ -1,0 +1,64 @@
+\begin{sol}
+    \begin{enumerate}[label=\textbf{(\alph*)}]
+        \item 
+        We can find acceleration due gravity with Gaussian law for gravity $$\oint g\dd S=4\pi GM_{enclosed}$$
+        Since $R$ is very big we can assume earth is infinite plate,so at the center $g$ is perpendicular to earth. We can choose a cylinder gaussian surface:
+        \begin{align*}
+            g\cdot 2A=4\pi Gm\\
+            g=2\pi G\sigma
+        \end{align*}
+        Let $\theta_1$ would  be equlibrium position. We can write that $\tau=m\ell(\omega^2\ell\sin\theta_1\cos\theta_1-g\sin\theta_1)=0$
+        . And fundamental law between angular acceleration and torque $I\ddot{\theta}=\tau$, where $I=m\ell^2$. So if we change angle by $\theta$ torque will be $\tau=m\ell(\omega^2\ell\cos 2\theta_1-g\cos\theta_1)\theta$ (due to taylor series)
+        And $$\ell\ddot{\theta}+\theta(g\cos\theta_1-\omega^2\ell\cos 2\theta_1)=0$$ So we see that $$\Omega_1^2(0)=\frac{2\pi G\sigma\cos\theta_1-\omega^2\ell\cos 2\theta_1}{\ell}$$
+        \item
+        For equlibrium position we need to solve equation for 
+        $\tau$:
+        $$m\ell^2\sin\theta \qty(\omega^2\cos\theta-\frac{g}{\ell})=0$$
+        Let $\omega_0=\sqrt{\frac{g}{\ell}}$ There's two solutions to these equation: 
+        $$\begin{cases}
+            \sin\theta=0,\text{or} \quad \theta=0 , \theta=\pi\\
+            \cos\theta=\frac{\omega_0^2}{\omega^2}
+        \end{cases}$$
+        For the stability we should have $\dv{\tau}{\theta}<0$ otherwise there will not be oscillations.
+         $$\dv{\tau}{\theta}=m\ell^2(\omega^2(\cos^2\theta-\sin^2\theta)-\omega_0^2\cos\theta)$$
+        If $\theta=0$ $$\dv{\tau}{\theta}=m\ell^2(\omega^2-\omega_0^2)$$ in this case we see that $\omega^2<\frac{g}{l}$ for stability.
+
+        If $\theta=\pi$ $$\dv{\tau}{\theta}=m\ell^2(\omega^2+\omega_0^2)$$ we see that in this case the position is not stable so there will not be oscillations.
+        
+        If $\theta=\arccos(\frac{\omega_0^2}{\omega^2})$ and plugging value applying condition we get that $\omega^2>\frac{g}{\ell}$ 
+
+        So maximum angular velocity is $\omega^2=\frac{2\pi G\sigma}{\ell}$
+        \item
+        For this part there will  be non-zero component of $g$ parallel  to earth.
+        \begin{center}
+            \incfig{drawing-2}
+        \end{center}
+        \begin{align*}
+        \dd \vec{g}=\frac{G\sigma r\dd r\dd \theta}{r^2}\vec{e_r}\\
+        \int \dd g=\int G\sigma\ln(\frac{r_2}{r_1})\cos\theta\dd \theta\\
+        \end{align*}
+        Using law of cosines 
+        \begin{align*}
+            R^2=r^2+r_1^2+2rr_1\cos\theta\\
+            r_1=\sqrt{R^2-r^2\sin^2\theta}-r\cos\theta\\
+            R^2=r^2+r_2^2-2rr_2\cos\theta\\
+            r_2=\sqrt{R^2-r^2\sin^2\theta}+r\cos\theta
+        \end{align*}
+        So our equation become
+        $$2G\sigma\int_0^{\frac{\pi}{2}}\ln(\frac{\sqrt{R^2-r^2\sin^2\theta}+r\cos\theta}{\sqrt{R^2-r^2\sin^2\theta}-r\cos\theta})\cos\theta\dd \theta$$
+        So we have a monstrous integral. We can approxiamte it with provided $r\ll R$. We ignore the terms with $r^2$ and our integral becomes $$g_\parallel=\int_0^{\frac{\pi}{2}}\frac{4G\sigma r}{R}\cos^2\theta\dd\theta$$
+        And this integral is $\mathbb{TRIVIAL}$ than other ones in OPHO. Integrate with trig identity and we get that$$\vec{g_\parallel}=\frac{\pi G\sigma\vec{r}}{R}$$
+
+        We can write equation for equlibrium point $$2\pi G\sigma\qty(\sin\theta-\frac{r}{2R}\cos\theta)-\omega^2(r-\ell\sin\theta)\cos\theta=0$$
+        solving this with assuming $r\ll R$ we get that $\tan\theta=\frac{\qty(\frac{2\pi G\sigma}{2R}+\omega^2)r}{2\pi G\sigma}$. We can write torque equation:
+        \begin{align*}
+            &\tau=-(mg_\bot\ell\sin\theta-g_\parallel\ell\cos\theta-\omega^2(r-\ell\sin\theta)\ell\cos\theta)\\
+            &\tau=-m\ell(2\pi G\sigma(\sin\theta-\frac{r\cos\theta}{2R})-\omega^2(r^2-\ell\sin\theta)\cos\theta)\\
+            &\dv{\tau}{\theta}=-m\ell(2\pi G\sigma(\cos\theta+\frac{r\sin\theta}{2R})+\omega^2(r\sin\theta+\ell\cos 2\theta))\\
+            &\ell\ddot{\theta}+\theta(2\pi G\sigma\qty(\cos\theta_1+\frac{r\sin\theta_1}{2R})+\omega^2(r\sin\theta_1+\ell\cos 2\theta))=0
+        \end{align*}
+        And frequency is $$\Omega^2(r)=\frac{2\pi G\sigma\qty(\cos\theta_1+\frac{r\sin\theta_1}{2R})+\omega^2(r\sin\theta_1+\ell\cos 2\theta)}{\ell}$$
+        \item
+    \end{enumerate}
+\vspace{15mm}
+\end{sol}
