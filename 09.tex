@@ -1,0 +1,23 @@
+\begin{sol}
+    \begin{enumerate}[label=\textbf{(\alph*)}]
+        \item 
+        Let $v_x$ will be velocity of particles. And $u$ velocity of piston. Assuming collisions are elastically and $m/ll M$ we can write that $v_x'=v_x-2u$
+        The energy change of particle will be $\frac12 m (v_x-2u)^2-\frac12 mv_x^2=-2muv_x$ number of the particles collides with the piston is 
+        $\dd N=\frac12  nSv_x\dd t$ 
+        \begin{align}
+            \nonumber \dd E_{total}=\dd N\Delta E=nmuv_x^2\dd t=Mu\dd u\\
+            M\dv{u}{t}=nmv_x^2
+        \end{align}
+        Assuming all the velocity components are the same we can find $v_x$: $$\frac{m(v_x^2+v_y^2+v_z^2)}{2}=\frac{3mv_x^2}{2}=\frac{3kT}{2}$$
+        With eq 1 we also have $M\ddot{x}=PS$ So we can write change in energy $$\dd U=-nSmv_x^2u\dd t=-nmv_x^2\dd V$$ also internal energy is $U=\frac{3nmv_x^2V}{2}$. so substituting 
+        we get $\dd U=-\frac{2}{3}\frac{\dd V}{V}$ integrating and using $U=C_VT$ we get $TV^{2/3}=const$ or $PV^{5/3}=const$
+
+        using that fact we can derive formula for pressure at distance $x$ piston moved: $$P=\frac{P_0V_0^{5/3}}{V^{5/3}}=\frac{NRT_0L_0^{2/3}}{N_AA(L_0+x)^{5/3}}$$
+        And pressure is acting on piston so $$M\ddot{x}=frac{NRT_0L_0^{2/3}}{N_AA(L_0+x)^{5/3}}$$
+        \item
+        \item 
+        \item
+        \item
+    \end{enumerate}
+\vspace{15mm}
+\end{sol}

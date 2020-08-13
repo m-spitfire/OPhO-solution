@@ -1,0 +1,54 @@
+\begin{sol}
+    \begin{enumerate}[label=\textbf{(\alph*)}]
+        
+        \item 
+        We can find power output of sunn by using $$\int_0^\infty\frac{8\pi h\nu^3}{c^3}\frac{\dd \nu}{e^{\frac{h\nu}{kT_\odot}}-1}$$
+        substitute $x=\frac{h\nu}{kT_\odot}$ we get 
+        $$\frac{8\pi k^4T_\odot^4}{c^3h^3}\int_0^\infty\frac{x^3}{e^x-1}\dd x$$
+        For solving this integral we need to do some advanced stuff. Take a look at Gamma function
+        $$\Gamma(x)=\int_0^\infty t^{x-1}e^{-t}\dd t$$ let's substitude $t=nu$, where $n\in\mathbb{N}$
+        we simplify a little bit divide equation by $n^x$ and get that $$\Gamma(x)\frac{1}{n^x}=\int_0^\infty u^{x-1}(e^{-u})^n \dd u$$
+        and we can take sum of both sides $n=1\to\infty$ and note that on the right hand side we have a geometric sequence. And solving int we get 
+        $$\Gamma(x)\sum_{n=1}^\infty\frac{1}{n^x}=\int_0^\infty\frac{u^{x-1}}{e^u-1}\dd u$$ for our case we need to take $x=4$. And get our integral changing domain 
+        $$(4-1)!\sum_1^\infty\frac{1}{n^4}=\int_0^\infty\frac{x^3}{e^x-1}\dd x$$ Now a bigger problem. What the heck is sum of fourth powers??? okay we need more advanced stuff. For this case take a look at Fourier transformation
+        $$f(x)=a_0+\sum_{n=1}^\infty\qty(a_n\cos(nx)+b_n\sin(nx))$$
+        And the parseval's theorem(comes from Fourier) says that $$\frac{1}{\pi}\int_{-\pi}^\pi (f(x))^2\dd x=2(a_0)^2+\sum_{n=1}^\infty (a_n^2+b_n^2)$$
+        Where \begin{align*}
+            a_0&=\frac{1}{2\pi}\int_{-\pi}^\pi f(x)\dd x\\
+            a_n&=\frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos(nx)\dd x\\
+            b_n&=\frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin(nx)\dd x
+        \end{align*}
+        Choose $f(x)=x^2$ solving for coefficents with integration by parts and using odd/even fucntion yields
+        $$\begin{cases}
+            a_0=\frac{\pi^2}{3}\\
+            a_n=\frac{4(-1)^n}{n^2}\\
+            b_n=0
+        \end{cases}$$
+        What we got from here we can substitute them to parseval's theorem and see what we get
+        $$\frac{\pi^4}{45}=2\sum_{n=1}^\infty\frac{1}{n^4}$$
+        and we finally did it!! $\sum_{n=1}^\infty\frac{1}{n^4}=\frac{\pi^4}{90}$
+        So $\int_0^\infty\frac{x^3}{e^x-1}\dd x=6\frac{\pi^4}{90}=\frac{\pi^4}{15}$. And our integral is $\frac{8\pi^5 k^4T_\odot^4}{15c^3h^3}$ So the power output of the star will be $\frac{32\pi^6 R_\odot^2 k^4T_\odot^4}{15c^2h^3}$
+        Energy flux on the planet will be power output times $\frac{1}{4\pi r_{ES}^2}$ and solving for temperature $$T_\odot=\sqrt[4]{\frac{15c^2h^3J_0r_{ES}^2}{\pi^5R_\odot^2k^4}}$$
+        \item 
+        The energy that produced by a fusion reaction is $E=(4m_p-m_{He})c^2$. Let $\dd N$ number of reactions happens in $\dd t$ time. We can assume power output of sun is due nuclear fusion. So 
+        $$P(R_\odot)\dd t=\dd N(4m_p-m_{He})c^2$$ and $\dv{N}{t}=\frac{P(R_\odot)}{(4m_p-m_{He})c^2}$ and number of protons per second is $4\dv{N}{t}$
+
+        The number of protons that can react :$\frac{2\eta M_\odot}{m_p}$ so $$t=\frac{(4m_p-m_{He})c^2\eta M_\odot}{2P(R_\odot) m_p}$$
+        \item 
+        We can find pressure due gravity. Take a small piece with area $A$, thicness $\dd r$ at distance $r$ from center. The force acting on piece is
+        $\frac{3GM^2Sr\dd r}{4\pi R^6}$ So we can write force balance on this piece $$p(r+\dd r)S-p(r)S=\frac{3GM^2Sr\dd r}{4\pi R^6}$$
+        using the definition of derivative and integrating, using  initial value $p(R)=0$ we get $$p(r)=\frac{3GM^2}{8\pi R^6}(R_\odot^2-r^2)$$
+
+        \item 
+        \item 
+        \item 
+        The force is because momentum change. The momentum change is $p_0(1+\gamma)$ $p_0$ is inital momentum. and there's relation between momentum and enrgy $E=pc$ so  $$F=\frac{\pi\sigma T_\odot^4 R_\odot^2 r_E^2(1+\gamma)}{cr_{SE}^2}$$
+        \item 
+        Since exoplanet is on thermal equlibrium we an write
+        $$\frac{\pi\sigma T_\odot^4 R_\odot^2 \cancel{r_E^2}(1-\gamma)}{r_{SE}^2}=\sigma T_E^4 4\pi \cancel{r_E^2}$$
+        $$T_E=T_\odot\sqrt[4]{\frac{R_\odot^2(1-\gamma)}{4r_{SE}^2}}$$
+        \item 
+        Why same question that voided in open round? we don't even try it because last time we did 3 different ways 3 wrong answers
+    \end{enumerate}
+\vspace{15mm}
+\end{sol}

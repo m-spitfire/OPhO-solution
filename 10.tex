@@ -1,0 +1,36 @@
+\begin{sol}
+    \begin{enumerate}[label=\textbf{(\alph*)}]
+        \item 
+        \item
+        \item 
+        \item
+        \item 
+        \item
+        Here We will use cylindrical coordinate system for the sake of simplicity 
+$$B_z=\frac{\mu_0 m}{4\pi(r^2+z^2)^{\frac{3}{2}}}\qty(\frac{3z^2}{r^2+z^2}-1)$$
+$$B_r=\frac{3\mu_0 mrz}{4\pi(r^2+z^2)^{\frac{5}{2}}}$$
+let`s calculate flux through ring 
+$$\phi=\int_{0}^{R}B_z2\pi rdr=\frac{\mu_0}{2}\int_{0}^{R}\frac{mr}{(r^2+z^2)^{\frac{3}{2}}}\qty(\frac{3z^2}{r^2+z^2}-1)dr=\frac{\mu_0mR^2}{2(R^2+z^2)^{\frac{5}{2}}}$$ 
+fro superconductor ring net flux ought to be zero ,so there will be current compensate this flux ,we will write it in positive form ,I doesn`t matter at all 
+$$LI=\frac{\mu_0mR^2}{2(R^2+z^2)^{\frac{5}{2}}}$$
+so here $I=\frac{\mu_0mR^2}{2L(R^2+z^2)^{\frac{5}{2}}}$
+Writing energy conservation 
+$$\frac{Mv_0^2}{2}=\frac{Mv^2}{2}+\frac{LI^2}{2}$$
+$$\frac{Mv_0^2}{2}=\frac{Mv^2}{2}+\frac{(\mu_0mR^2)^2}{8L(R^2+z^2)^5}$$
+Result: 
+$$v=\sqrt{v_0^2-\frac{(\mu_0mR^2)^2}{4ML(R^2+z^2)^{5}}}$$
+        \item 
+        as we know that $\varepsilon=\dv{\phi}{t}=\frac{3vzmR^2}{2(R^2+z^2)^{\frac{5}{2}}}$
+$$I=\frac{\varepsilon}{\frac{2\pi R}{\sigma dz}}$$
+force acting on this ring :
+$F=2\pi RIB_z$ 
+so $$F_{total}=\int_{-\infty}^{\infty}2\pi \sigma R B_r^2 vdz=\frac{9\mu_0^2m^2R^3\sigma}{8\pi} \int_{-\infty}^{\infty}\frac{z^2}{(z^2+R^2)^5}dz$$   
+so dividing it by v and calculating the integral will give us the damping parameter 
+$$k=\frac{9\mu_0^2m^2 \sigma}{1024R^4}$$
+        \item
+        when body reaches its terminal velocity ,then there is no  net force acting on it 
+        $kv=Mg$ and from this $$v=\frac{Mg}{k}$$
+            
+    \end{enumerate}
+\vspace{15mm}
+\end{sol}
