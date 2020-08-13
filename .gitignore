@@ -11,7 +11,8 @@
 *.cb
 *.cb2
 .*.lb
-
+#latex-workshop shit
+__latexindent_temp.tex
 ## Intermediate documents:
 *.dvi
 *.xdv
